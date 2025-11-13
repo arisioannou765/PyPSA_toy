@@ -11,6 +11,14 @@ This script demonstrates:
 Run with:
     python examples/example_scenario.py
 """
+import os
+import sys
+
+# Ensure the project root (where toy_pypsa_model.py lives) is on sys.path
+HERE = os.path.dirname(__file__)
+ROOT = os.path.dirname(HERE)
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
 
 from toy_pypsa_model import ToyPyPSAModel
 
