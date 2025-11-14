@@ -27,24 +27,24 @@ def main():
     # Create a model with a nonzero carbon price
     model = ToyPyPSAModel(name="example_scenario", carbon_price_eur_per_t=50)
 
-    print("\n=== Building network ===")
+    print("\n Building network")
     model.build_network()
 
-    print("\n=== Optimizing ===")
+    print("\n Optimizing ===")
     model.optimize()
 
-    print("\n=== Sanity checks ===")
+    print("\n Sanity checks")
     checks = model.sanity_checks()
     print(checks)
 
-    print("\n=== KPIs ===")
+    print("\n KPIs")
     k = model.kpis.compute()
     for key, val in k.items():
         print(f"{key}: {val}")
 
-    print("\n=== Plotting ===")
-    model.plots.dispatch_stack(outfile="dispatch_example.png")
-    model.plots.emissions_by_generator_stack(outfile="emissions_example.png")
+    print("\n Plotting")
+    model.plots.dispatch_stack(outfile="dispatch_stack.png")
+    model.plots.emissions_by_generator_stack(outfile="emissions_by_generator_stack.png")
 
     print("\nExample scenario completed.")
 

@@ -20,7 +20,7 @@ def main():
     print("\nGenerators table:")
     print(n.generators[["carrier", "p_nom_extendable"]])
 
-    # NEW: optimize the network
+    #Optimize the network
     print("\nOptimizing network...")
     model.optimize()  # this will use self.network (already built)
 

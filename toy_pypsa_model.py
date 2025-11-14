@@ -45,11 +45,11 @@ class ToyPyPSAModel:
         "demand_scale": 1.0,
         "hydro_inflow_scale": 1.0,
     }
-    #allow scenario overides
+    #define innit, allow scenario overides
     def __init__(self, **overrides):
         self.params = {**self.DEFAULTS, **overrides}
         self.name = self.params.get("name", "toy-24h")
-        self.network = None #Holds netorkwork
+        self.network = None #Holds network
         self.kpis = KPIs(self)
         self.plots = Plots(self)
 
